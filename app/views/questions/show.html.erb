@@ -1,0 +1,8 @@
+<h1> Question </h1><br/>
+<h3> Questioner - <%= current_user.email %> </h3>
+<h3> Question - <%= @question.question %> </h3>
+<% answers = @question.answers.pluck(:answer) %>
+<% answers.each do |ans| %>
+  <h3> Ans - <%= ans %></h3>
+<% end %>
+<%= link_to "Back", root_path, class: "btn btn-outline-info mt-4" %>

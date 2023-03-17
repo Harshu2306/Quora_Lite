@@ -1,0 +1,6 @@
+<h1> Question Listing </h1>
+<% @questions.each do |q| %>
+  <%= link_to "#{q.question}", question_path(q)%><br/>
+<% end %>
+<%= button_to("Log Out", destroy_user_session_path, method: :delete) %><br/>
+<%= link_to "My Friends", my_friends_path(friend: @user), class: "btn btn-outline-info" %>

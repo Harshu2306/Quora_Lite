@@ -1,0 +1,16 @@
+<h1> User's Profile </h1>
+
+<p>Email: <%= @user.email %> </p><br/><br/>
+
+
+<h1> Friends of User </h1>
+<% if @user.friends.present? %>
+  <% friends = @user.friends.pluck(:email) %>
+  <% friends.each do |frd| %>
+    <h5> friends - <%= frd %>
+  <% end %>
+<% else %>
+  <h5> Sorry this user have no friends. </h5>
+<% end %><br/>
+
+<%= link_to "Back", my_friends_path, class: "btn btn-outline-primary mt-4" %>
