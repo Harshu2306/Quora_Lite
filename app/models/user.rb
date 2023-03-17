@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :answers, through: :questions
   has_many :friendships
   has_many :friends, through: :friendships
+  has_many :topics, through: :topic_users
 
   def not_friends_with?(id_of_friend)
     !self.friends.where(id: id_of_friend).exists?
